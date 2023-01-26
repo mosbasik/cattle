@@ -21,12 +21,8 @@ services:
       # - INTERNAL_SUBNET=10.64.1.0
       # - ALLOWEDIPS=0.0.0.0/0
     volumes:
-      - type: bind
-        source: ./config/wireguard
-        target: /config
-      - type: bind
-        source: /lib/modules
-        target: /lib/modules
+      - ./config/wireguard:/config
+      - /lib/modules:/lib/modules
     ports:
       - 51820:51820/udp
     sysctls:
@@ -55,9 +51,5 @@ services:
       # DISABLE_IPV6: 'true'
 
     volumes:
-      - type: bind
-        source: ./data/nginxproxymanager/data
-        target: /data
-      - type: bind
-        source: ./data/nginxproxymanager/letsencrypt
-        target: /etc/letsencrypt
+      - ./data/nginxproxymanager/data:/data
+      - ./data/nginxproxymanager/letsencrypt:/etc/letsencrypt
