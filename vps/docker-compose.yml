@@ -56,8 +56,8 @@ services:
 
     volumes:
       - type: volume
-        source: ./data
+        source: ./data/nginxproxymanager/data
         target: /data
       - type: volume
-        source: ./letsencrypt
+        source: ./data/nginxproxymanager/letsencrypt
         target: /etc/letsencrypt
