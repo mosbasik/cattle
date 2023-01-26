@@ -21,7 +21,7 @@ services:
       # - INTERNAL_SUBNET=10.64.1.0
       # - ALLOWEDIPS=0.0.0.0/0
     volumes:
-      - type: volume
+      - type: bind
         source: ./config/wireguard
         target: /config
       - type: bind
@@ -55,9 +55,9 @@ services:
       # DISABLE_IPV6: 'true'
 
     volumes:
-      - type: volume
+      - type: bind
         source: ./data/nginxproxymanager/data
         target: /data
-      - type: volume
+      - type: bind
         source: ./data/nginxproxymanager/letsencrypt
         target: /etc/letsencrypt
