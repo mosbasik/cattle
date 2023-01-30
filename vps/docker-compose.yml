@@ -17,6 +17,7 @@ services:
       - SERVERURL=wireguard.peterhenry.net
       - SERVERPORT=51820
       - PEERS=simone,nawa
+      - PERSISTENTKEEPALIVE_PEERS=all
       # - PEERDNS=192.168.0.114
       # - INTERNAL_SUBNET=10.64.1.0
       # - ALLOWEDIPS=0.0.0.0/0
