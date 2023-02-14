@@ -2,6 +2,18 @@ version: '3.7'
 
 services:
 
+  hello2:
+    image: nginxdemos/hello
+    container_name: hello2
+    ports:
+      - 51211:80/tcp
+
+  hello3:
+    image: nginxdemos/hello
+    container_name: hello3
+    ports:
+      - 61211:80/tcp
+
   wireguard:
     # Created by following https://containers.fan/posts/wireguard-vpn-on-docker/
     image: ghcr.io/linuxserver/wireguard
