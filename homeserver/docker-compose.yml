@@ -19,6 +19,7 @@ services:
     image: ghcr.io/linuxserver/wireguard
     container_name: wireguard
     restart: unless-stopped
+    network_mode: host
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
@@ -35,7 +36,3 @@ services:
     volumes:
       - ./config/wireguard:/config
       - /lib/modules:/lib/modules
-    ports:
-      - 51820:51820/udp
-    sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
